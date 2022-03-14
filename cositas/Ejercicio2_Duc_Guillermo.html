@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:bisque; margin-left: 2cm; margin-right: 2cm; margin-top: 1cm;">
+    <h1>
+        <p style="text-align: center;"><b><font style="color: blue;text-align: center;">BLOG TRABAJO EN EL CICLO</font></b></p>
+    </h1>
+    <hr style="color: black;"> </hr>
+    <h2><p style="text-align: center;">Entrada 1: Ejercicio programacion 1</p></h2>
+    <p>
+       <em> Se nos propuso realizar ejercicios de programacion en clase: un ejemplo de ellos era escribir un programa para encontrar el siguiente numero primo al introducido, el codigo que ideamos fue:
+    </em></p>
+    <p>package ejercicios;</p>
+
+<p>import java.util.Scanner;</p>
+<p>
+
+public class ejercicio10v2 {
+</p>
+	public static void main(String[] args) {</p>
+		// TODO Auto-generated method stub</p>
+		Scanner teclado = new Scanner(System.in);</p>
+		int numero;</p>
+		
+		boolean siguienteprimo=false;</p>
+		
+		System.out.println("Introduce un numero");</p>
+		numero= teclado.nextInt();</p>
+
+		
+
+	int contador;</p>
+		numero=numero+1;</p>
+   while (siguienteprimo==false) {</p>
+	 int primo=0;</p>
+		for(contador=numero;contador>0;contador--) { // El programa va desde el numero introducido hasta n comprobando si el numero introducido se puede dividir por cada numero de 0 hasta n</p>
+			
+			if (numero%contador==0) { </p>
+				
+				primo++;// en caso de que sea primo solo sumara el propio numero y 1</p>
+			}	</p>
+			
+		}</p>
+		if (primo==2)</p>
+				siguienteprimo=true;</p>
+		
+		numero++;</p>
+		}System.out.println(numero-1);
+    </p>
+}</p>
+}</p>
+</div>
+    </p>
+    <h2 style="text-align: center;">Ejercicio de programacion 2</h2>
+    <hr style="color: black;"> </hr>
+    <p><em>En este ejercicico se pedia comprobar si el numero introducido es perfecto o no, esto es, si la suma de sus divisores es el numero mismo</p>
+    </em>package ejercicios;</p>
+
+import java.util.Scanner;</p>
+
+public class ejercicio9 {</p>
+
+	public static void main(String[] args) {</p>
+		// TODO Auto-generated method stub</p>
+		Scanner teclado = new Scanner(System.in);</p>
+		int n;</p>
+		int suma=0;</p>
+		System.out.println("Introduce un numero");</p>
+		n= teclado.nextInt();</p>
+		int contador=1;</p>
+		while (contador menor que n/2+1) {</p>
+			if (n%contador==0) {</p>
+				
+					suma+=contador;</p>
+					contador++;</p>
+			}else contador++;</p>
+	}
+		if (suma==n)</p>
+			System.out.println("Es perfecto");</p>
+		else</p>
+			System.out.println("No es perfecto");</p>
+	}</p>
+}</p>
+<br>
+<p><a style="text-align: right;" href="./Ejercicio3_Duc_Guillermo.html">Bibliografia</a></p>
+<p><a style="text-align: right;" href="./Ejercicio1_Duc_Guillermo.html">Curriculum</a></p>
+</body>
+</html>

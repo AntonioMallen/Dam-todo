@@ -1,0 +1,22 @@
+<clase>
+<persona>
+    <nombre>Guillermo</nombre>
+    <hombre/>
+    <fecha-de-nacimiento>
+        <dia>23</dia>
+        <mes>9</mes>
+        <ano>1998</ano>
+    </fecha-de-nacimiento>
+    <ciudad>Zaragoza</ciudad>
+</persona>
+<persona>
+    <nombre>Antonio</nombre>
+    <hombre/>
+    <fecha-de-nacimiento>
+        <dia>7</dia>
+        <mes>7</mes>
+        <año>2002</año>
+    </fecha-de-nacimiento>
+    <ciudad>Zaragoza</ciudad>
+</persona>
+</clase>

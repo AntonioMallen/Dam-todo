@@ -1,0 +1,16 @@
+
+<biblioteca>
+    <libro num="1">
+        <ISBN>1982182911</ISBN>
+        <titulo>Peril</titulo>
+        <autor>	
+Bob Woodward</autor>
+        <Editorial> Simon  Schuster</Editorial>
+    </libro>
+    <libro num="2">
+        <ISBN></ISBN>
+        <titulo></titulo>
+        <autor></autor>
+        <Editorial></Editorial>
+    </libro>
+</biblioteca>

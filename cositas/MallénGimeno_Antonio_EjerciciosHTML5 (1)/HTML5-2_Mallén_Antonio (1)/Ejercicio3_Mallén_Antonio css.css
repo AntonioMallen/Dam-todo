@@ -1,0 +1,31 @@
+nav{
+    text-align: center;
+    background-color:rgb(231, 200, 197) ;
+    padding: 15px ;
+}
+.navegacion{
+    padding: 3mm;
+    border-radius: 50px;
+    border: 1px solid ;
+    background-color:white;
+}
+h1{
+    text-align: center;
+}
+body{ 
+    margin-left: 2cm; 
+    margin-right: 2cm; 
+    margin-top: 1cm;
+}
+h3{
+    text-align: right;
+}
+header{
+    background-color:rgb(231, 200, 197)  ;
+}
+footer{
+    background-color:rgb(231, 200, 197) ;
+}
+main{
+    background-color:rgb(152, 196, 235) ;
+}

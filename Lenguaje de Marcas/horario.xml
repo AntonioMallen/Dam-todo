@@ -1,0 +1,55 @@
+<?xml-stylesheet href="horarios.css"?>
+<horario>
+        <dia nombre="lunes">
+            <primera_hora hora= "8:30">Programacion</primera_hora>
+            <segunda_hora hora= "9:25">Programacion</segunda_hora>
+            <tercera_hora hora= "10:20">Programacion</tercera_hora>
+            <recreo>Recreo</recreo>
+            <cuarta_hora hora= "11:40">Programacion</cuarta_hora>
+            <quinta_hora hora= "12:35">LMS</quinta_hora>
+            <sexta_hora hora= "13:30">LMS</sexta_hora>
+        </dia>
+        <dia nombre="martes">
+            <primera_hora hora= "8:30">Ingles</primera_hora>
+            <segunda_hora hora= "9:25">Sistemas informaticos</segunda_hora>
+            <tercera_hora hora= "10:20">Sistemas informaticos</tercera_hora>
+            <recreo>Recreo</recreo>
+            <cuarta_hora hora= "11:40">Sistemas informaticos</cuarta_hora>
+            <quinta_hora hora= "12:35">Programacion</quinta_hora>
+            <sexta_hora hora= "13:30">Programacion</sexta_hora>
+        </dia>
+        <dia nombre="miercoles">
+            <primera_hora hora= "8:30">Base de datos</primera_hora>
+            <segunda_hora hora= "9:25">Base de datos</segunda_hora>
+            <tercera_hora hora= "10:20">ED</tercera_hora>
+            <recreo>Recreo</recreo>
+            <cuarta_hora hora= "11:40">ED</cuarta_hora>
+            <quinta_hora hora= "12:35">Ingles</quinta_hora>
+            <sexta_hora hora= "13:30">FOL</sexta_hora>
+        </dia>
+        <dia nombre="jueves">
+            <primera_hora hora= "8:30">LMS</primera_hora>
+            <segunda_hora hora= "9:25">FOL</segunda_hora>
+            <tercera_hora hora= "10:20">Base de datos></tercera_hora>
+            <recreo>Recreo</recreo>
+            <cuarta_hora hora= "11:40">Base de datos</cuarta_hora>
+            <quinta_hora hora= "12:35">Programacion</quinta_hora>
+            <sexta_hora hora= "13:30">Programacion</sexta_hora>
+        </dia>
+        <dia nombre="viernes">
+            <primera_hora hora= "8:30">FOL</primera_hora>
+            <segunda_hora hora= "9:25">Sistemas informaticos</segunda_hora>
+            <tercera_hora hora= "10:20">Sistemas informaticos</tercera_hora>
+            <recreo>Recreo</recreo>
+            <cuarta_hora hora= "11:40">ED</cuarta_hora>
+            <quinta_hora hora= "12:35">Base de datos</quinta_hora>
+            <sexta_hora hora= "13:30">Base de datos</sexta_hora>
+        </dia>
+</horario>
+Bases de datos
+
+
+Programacion
+Sistemas Ingles
+Lenguajes
+Entornos FOL

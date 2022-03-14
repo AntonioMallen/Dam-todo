@@ -1,0 +1,24 @@
+class Programa {
+	
+	
+
+	static boolean esPrimo (int numero ) {
+		// ....
+		return....
+	}
+	static void main...{
+		boolean primo;
+		//leemos numero
+		primo = esPrimo(numero);
+		//resto del metodo main
+	}
+}
+while(numero!=int contador = 1){
+	if(numero%contador==0){
+	contadorprim++;
+	}else{}
+			
+contador++
+}
+if (contadorprim==2){
+syso("es primo")}else{syso("No es primo")}

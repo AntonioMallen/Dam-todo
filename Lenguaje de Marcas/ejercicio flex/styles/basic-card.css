@@ -1,0 +1,30 @@
+body{
+    height: 1000px ;
+    width: 1200px;
+}
+.photo{
+    padding: 3vh;
+    background-image: url(../images/trent-reznor.jpeg);
+    background-size: 100% ;
+    background-repeat: no-repeat;
+    height: 100% ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.top-left{
+    height: 63vh;
+    width: 23vw;
+}
+.bottom-centered{
+    padding-left: 10px;
+    background-color: white;
+    opacity: 60%;
+}
+.news-title{
+    font-size: 56px;
+}
+.news-resume{
+    font-size: 32px;
+}

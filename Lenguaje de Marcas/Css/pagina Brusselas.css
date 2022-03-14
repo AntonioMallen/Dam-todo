@@ -1,0 +1,51 @@
+header{
+    background-color: rgb(134, 197, 134);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+aside{
+    width: 50px;
+    height: 100%;
+}
+body{
+    margin: 0 0 0 0;
+}
+h1{
+    margin: 0 0 0 0;
+}
+nav{
+    background-color: rgb(134, 197, 134);
+    display: flex ;
+    justify-content: flex-end;
+}
+ul{
+    margin: 0 0 0 0;
+}
+.card-section{
+    margin-left: 17%;
+    margin-right: 17%;
+    display: grid; 
+    grid-template-columns: 28vh 28vh 28vh;
+    grid-column-gap:6vh;
+}
+.card{
+    background-color:lightgrey ;
+    border: 1px solid black;
+    width: 27vh;
+    height: 27vh;
+}
+.text{
+    margin-left: 10vh;
+    margin-right: 10vw;
+}
+.card-title{
+    margin-top: 4%;
+    margin-left: 8%;
+    margin-right: 8%;
+    font-weight: bold;
+}
+.card-content{
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-right: 8%;
+}

@@ -1,0 +1,13 @@
+<alumno>
+<ciudad>Pamplona</ciudad>
+<dia>18</dia>
+<mes>6</mes>
+<ciudad>Pamplona</ciudad>
+<rojo/>
+<colores>Rojo y Naranja</colores>
+<Aficiones>Cine, Bailar, Nadar</Aficiones>
+<persona>
+    <nombre>Elsa</nombre>
+</persona>
+<color_favorito>azul</color_favorito>
+</alumno>

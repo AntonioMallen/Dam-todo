@@ -1,0 +1,49 @@
+|80 20 21 00 07 FE FF FF 00 08 00 00 00 78 CE 01        |
+|_______________________________________________________|
+|80 - Indicador de arranque: 			1 Byte  |
+|20 21 00 - Inicio de partición (CHS): 	        3 Bytes |pasarlo a little endian 00 21 20 = 8480
+|07 - Descripción de partición: 		1 Byte  |
+|FE FF FF - Fin partición (CHS): 	        3 Bytes |pasarlo a little endian FF FF FE = 16777214
+|00 08 00 00 - Sector de inicio de partición:   4 Bytes |pasarlo a little endian 00 00 08 00 = 2024
+|00 78 CE 01 - Tamaño de la partición (Sector): 4 Bytes |pasarlo a little endian 01 CE 78 00 =30.308.352
+|_______________________________________________________|
+ 80 00 02 00 EE FE FF 5D 01 00  00 00 FF FF FF FF    	ESTE USB YA NO FUNCIONA xD    
+ 80
+ 00 02 00
+ EE
+ FE FF 5D
+ 01 00  00 00 = 00 00 00 01 = 1 en base 10
+ FF FF FF FF = FF FF FF FF = 
+______________________________________________________
+20 001000 0100000000
+32 8 256
+
+Sobre el pen realizar una copia de seguridad del MBR con BOOTICE, realizar además una copia de seguridad de la tabla de particiones.
+Acceder a la tabla y al MBR con un editor hexadecimal y analizar la informaciónb encotrada
+Modificar los datos de la tabla de particiones en el MBR y comprobar que pasa con WINDOWS
+	-posible datos a modificar : sector de inicio de partición, indicador de arranque, etc.
+
+Descripcion de particion 0C FE FF
+_________________________________________________________________________________________________________________________
+Borrar programa de Arranque ¿ Monta el pen drive?: No
+Borrar tabla de particiones manteniendo programa de arranque ¿ Monta el pen drive ?: No
+Repetir prueba teniendo ficheros en la particion ¿ Son accesibles despues de restaurar?: Si
+__________________________________________________________________________________________________________________________________________________________
+Modificar el indicador de arranque: no pasa  nada, funciona perfectamente.
+Modificar inicio y fin particion CHS: no pasa nada, funciona perfectamente.
+Cambiar el descriptor de partición a diferentes tipos. Qué hace el S.O?: Solo modifica el id del USB.
+Modificar el sector de inicio de partición. Qué hace el S.O?: No se puede obtener el acceso.
+Modificar el tamaño de la parrtición en sectores a la mitad:Dividimos a la mitad el tamaño de la partición en little endian y lo pasamos a hexadecimal.
+00 E7 3C 00|00 3C E7 00 Divide a la mitad el tamaño del USB, pero el USB no funciona porque no detecta el sistema de arranque.
+____________________________________________________________________________________________________________________________________________________________
+
+¿que es el PBR?: Sirve para hacer un boot record de varios sectores. El PBR es
+cargado por el MBR en la memoria y le trasfiere el control. Mientras que el código MBR es independiente del sistema operativo, el código en el PBR es 
+proporcionado por un sistema operativo en particular y funciona con él.
+
+¿Tamaño en referencia al formato de partición (sectores)? Para NTFS son unos 16 sectores.
+
+En el NTFS los sectores se dividen en dos bloques: El primer sector, de hecho, 
+es un sector de arranque con un código "bootstrap" y los siguientes 15 sectores son la IPL (cargador de programa inicial) del sector de arranque.
+
+Cuando modificas las etiqueta de confirmacion no pasa nada y si borras un sector del PBR sigue sin hacer nada.
