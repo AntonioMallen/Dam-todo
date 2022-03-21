@@ -1,0 +1,22 @@
+int p=0
+int u=ultimo-1
+
+while(p<=u)
+int m=(p+u)/2
+if( o.clave<lista[m].clave )
+	u=m
+if( o.clave>lista[m].clave)
+	p=m
+if( o.clave==lista[m].clave )
+return true
+
+} //final bucle
+
+
+return vector[m]==o.clave
+
+
+  
+ 
+
+	
