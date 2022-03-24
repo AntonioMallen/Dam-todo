@@ -1,10 +1,10 @@
 
 public class SeleccionDirecta {
-	int [] vector= { 6, 17, 4, 7,99,13,22,66} ;
+	int [] vector= { 6, 17, 4, 7,99,13,22,66,23,65,123,5623} ;
 	int cantidad= vector.length;
 	int aux=0;
 	
-	void seleccionDirecta() {
+	void seleccionDirecta_mal2() {
 		for(int i=0;i<cantidad;i++) {
 			int menor=i;
 			
@@ -21,7 +21,7 @@ public class SeleccionDirecta {
 			vector[i]=aux;
 		}
 	}
-	void seleccionDirecta_bien() {
+	void seleccionDirecta_mal() {
 		for(int i=0;i<cantidad;i++) {
 			int menor=i;
 			
@@ -39,7 +39,7 @@ public class SeleccionDirecta {
 			
 		}
 	}
-	void seleccionDirecta_ionut() {
+	void seleccionDirecta_bien() {
 		for(int i=0;i<cantidad;i++) {
 			int menor=i;
 			for(int j=i+1;j<cantidad;j++) {
@@ -70,7 +70,7 @@ public class SeleccionDirecta {
 	/*
 	 * No sabemos si es esto lo que nos pide pero Antonio Mallén dice que sí☺
 	 */
-	void burbuja_pro() {
+	void burbuja_mejorada() {
 		boolean ordenao=false;
 		do {
 			for (int i = 0; i < cantidad; i++) {
@@ -93,7 +93,7 @@ public class SeleccionDirecta {
 			}
 		}while(!ordenao);
 	}
-	void burbuja_pro_bien() {
+	void burbuja_sacudida() {
 		boolean ordenao=false;
 		int u=cantidad-1;
 		int p=0;
@@ -118,12 +118,32 @@ public class SeleccionDirecta {
 				}
 				u--;
 			}
-		}while(p<u);
+		}while(p<u  );
+	}
+	
+	void burbuja_baile() {
+		boolean ordenado=true;
+		int contadorposicion=9;
+		while (ordenado==true) {
+		for(int i=0;i<cantidad-(contadorposicion);i++) {
+				if(vector[i]>vector[i+contadorposicion]) {
+					if(contadorposicion==1) { ordenado=false;}
+					aux=vector[i];
+					vector[i]=vector[i+contadorposicion];
+					vector[i+contadorposicion]=aux;
+				}
+		}
+		if (ordenado==true&&contadorposicion==1) { return;}
+		contadorposicion=(contadorposicion/2)+1;
+		if (contadorposicion==2) {contadorposicion=1;}
+		ordenado=true;
+		}
 	}
 	
 	public static void main(String[] args) {
 		SeleccionDirecta si = new SeleccionDirecta();
-		si.burbuja_pro();
+		si.burbuja_baile();
+		
 		for(int i=0;i<si.vector.length;i++) {
 			System.out.println(si.vector[i]);
 		}
