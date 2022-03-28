@@ -1,9 +1,14 @@
-
+import java.util.*;
 public class SeleccionDirecta {
-	int [] vector= { 6, 17, 4, 7,99,13,22,66,23,65,123,5623} ;
+	int [] vector= new int[100000] ;
 	int cantidad= vector.length;
 	int aux=0;
-	
+	SeleccionDirecta(){
+		Random r= new Random(54364542);
+		for (int i=0;i<100000;i++) {
+			vector[i]=r.nextInt(10000000);
+		}
+	}
 	void seleccionDirecta_mal2() {
 		for(int i=0;i<cantidad;i++) {
 			int menor=i;
@@ -98,7 +103,7 @@ public class SeleccionDirecta {
 		int u=cantidad-1;
 		int p=0;
 		do {
-			for (int j = u; j>=p ;j--) {
+			for (int j = u-1; j>=p ;j--) {
 				if(vector[j]>vector[j+1]) {
 					if(vector[j]>vector[j+1]) {
 						aux=vector[j];
@@ -120,10 +125,9 @@ public class SeleccionDirecta {
 			}
 		}while(p<u  );
 	}
-	
 	void burbuja_baile() {
 		boolean ordenado=true;
-		int contadorposicion=9;
+		int contadorposicion=99351;
 		while (ordenado==true) {
 		for(int i=0;i<cantidad-(contadorposicion);i++) {
 				if(vector[i]>vector[i+contadorposicion]) {
@@ -134,19 +138,64 @@ public class SeleccionDirecta {
 				}
 		}
 		if (ordenado==true&&contadorposicion==1) { return;}
-		contadorposicion=(contadorposicion/2)+1;
+		if(contadorposicion!=1) {
+		contadorposicion=(contadorposicion/2)+1;}
 		if (contadorposicion==2) {contadorposicion=1;}
 		ordenado=true;
 		}
 	}
-	
-	public static void main(String[] args) {
-		SeleccionDirecta si = new SeleccionDirecta();
-		si.burbuja_baile();
-		
-		for(int i=0;i<si.vector.length;i++) {
-			System.out.println(si.vector[i]);
+	void qsort(int ini, int fin) {
+		if(ini>=fin) {return;}
+		while(ini<fin) {
+			int pivote=vector[ini];
+			int posicion=ini;
+			for(int contador=ini;contador<fin;contador++) {
+				if(pivote>vector[contador]) {
+					aux=vector[contador];
+					for(int i=contador;i>ini;i--) {
+						vector[contador]=vector[contador-1];	
+					}
+					if(posicion!=0) {
+						vector[posicion-1]=aux;
+					}
+					posicion=contador;
+				}
+			}
+			qsort(ini,vector[posicion-1]);
+			qsort(vector[posicion+1],fin);
 		}
 	}
-
+	
+	void qsort_mejor(int ini, int fin) {
+		int i=ini;
+		int j=fin;
+		int pivote=vector[ini];
+		if(ini>=fin) {return;}
+		do {
+			while(vector[i]<pivote) {i++;}
+			while(vector[j]>pivote) {j--;}
+			if(i<j) {
+				aux=vector[i];
+				vector[i]=vector[j];
+				vector[j]=aux;
+			}
+		}while(j>=i);
+		qsort_mejor(ini,i-1);
+		qsort_mejor(j+1,fin);
+	}
+	
+	public static void main(String[] args) {
+		SeleccionDirecta a= new SeleccionDirecta();
+		long t=System.currentTimeMillis();
+		a.burbuja_baile();
+		long y= System.currentTimeMillis();
+		System.out.println("tiempo: "+(y-t));
+		for(int i=a.vector.length-1;i>a.vector.length-101;i--) {
+			System.out.println(a.vector[i]);
+		}
+		//seleccionDirecta_bien 10600-10775-10596
+		//burbuja_mejorada 12247
+		//burbuja normal 10972
+		//burbuja baile 14422
+	}		
 }
