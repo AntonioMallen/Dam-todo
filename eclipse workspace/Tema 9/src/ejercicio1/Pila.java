@@ -4,13 +4,15 @@ public class Pila {
 private int [] pila=new int[1000];
 private int indice=0;
 
-
-public int numeroAleatorio() {
-	Random r = new Random();
-return r.nextInt(2000);
+public int[] getPila() {
+	return pila; 
 }
-public void push() {
-	pila[indice]=numeroAleatorio();
+public int getIndice() {
+	return indice; 
+}
+
+public void push( int num ) {
+	pila[indice]=num;
 	indice++;
 }
 public void pop() {
