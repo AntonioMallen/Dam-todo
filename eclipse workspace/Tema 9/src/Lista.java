@@ -1,5 +1,5 @@
 
-public class Lista {
+public class Lista implements Comparable{
 	String [] lista;
 	int cantidad;
 	Lista(){
@@ -45,6 +45,11 @@ public class Lista {
 		cantidad++;
 		}
 		}
+@Override
+public int compareTo(Object o) {
+	
+	return 0;
+}
 	
 
 	

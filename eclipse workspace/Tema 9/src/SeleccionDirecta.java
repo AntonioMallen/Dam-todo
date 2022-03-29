@@ -1,12 +1,13 @@
 import java.util.*;
+
 public class SeleccionDirecta {
-	int [] vector= new int[100000] ;
+	int [] vector= new int[1000000] ;
 	int cantidad= vector.length;
 	int aux=0;
 	SeleccionDirecta(){
 		Random r= new Random(54364542);
-		for (int i=0;i<100000;i++) {
-			vector[i]=r.nextInt(10000000);
+		for (int i=0;i<vector.length;i++) {
+			vector[i]=r.nextInt(vector.length);
 		}
 	}
 	void seleccionDirecta_mal2() {
@@ -185,7 +186,7 @@ public class SeleccionDirecta {
 	}
 	
 	public static void main(String[] args) {
-		SeleccionDirecta a= new SeleccionDirecta();
+		/*SeleccionDirecta a= new SeleccionDirecta();
 		long t=System.currentTimeMillis();
 		a.burbuja_baile();
 		long y= System.currentTimeMillis();
@@ -196,6 +197,18 @@ public class SeleccionDirecta {
 		//seleccionDirecta_bien 10600-10775-10596
 		//burbuja_mejorada 12247
 		//burbuja normal 10972
-		//burbuja baile 14422
+		//burbuja baile 14422 / 3000-4000
+		 * 
+		 */
+		SeleccionDirecta a= new SeleccionDirecta();
+		long t=System.currentTimeMillis();
+		Arrays.sort(a.vector);
+		long y= System.currentTimeMillis();
+		// solo dice el tiempo de ordenar, no el de imprimir 
+		for(int i=a.vector.length-1;i>0;i--) {
+			System.out.println(a.vector[i]);
+		}
+		
+		System.out.println("tiempo: "+(y-t)*60/1000);
 	}		
 }
