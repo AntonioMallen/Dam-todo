@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.lista-tareas {
+    width: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background-color: gainsboro;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:rgb(207, 205, 205);
+    border-radius: 5px;
+}
+
+.mensaje {
+    width:70%;
+    color:rgb(224, 77, 77);
+    
+}
+
+.hide {
+    display:none;
+}
+
+.dato {
+    width: 70%;
+    font-size: 1rem;
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dato-fallo {
+    border-style: solid;
+    border-width: 1px;
+    border-color:rgb(224, 77, 77);
+    color:rgb(224, 77, 77);
+}
+
+label {
+    width: 40%;
+}
+
+input[type=text] {
+    width: 40%;
+    border-radius: 5px;
+    background-color:rgb(235, 233, 233);
+}
+
+.botonera {
+    width: 70%;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.Mucho_texto {
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 5px 3px 5px;
+    margin: 5px;
+}
+.boton-reset {
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 5px 3px 5px;
+    margin: 5px;
+}
+
+.boton-reset:hover {
+    background-color: rgb(247, 205, 128);
+    cursor:grab;
+}
+
+.boton-crear {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 5px 3px 5px;
+    margin:5px;
+}
+
+.boton-crear:hover {
+    background-color: rgb(166, 253, 166);
+    cursor:grab;
+}
+
+
+.boton-borrar {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 5px 3px 5px;
+    margin:5px;
+}
+
+.boton-borrar:hover {
+    background-color: rgb(252, 124, 124);
+    cursor:grab;
+}

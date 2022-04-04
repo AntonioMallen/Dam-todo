@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ToDo List</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script>
+
+    let borrarDatos =function(){
+            let titulo = document.getElementById('titulo').value;
+            let description = document.getElementById('descripcion').value;
+            titulo.value="";
+            description="";
+        }
+
+    let mostrarDatos =function(){
+
+        
+        let titulo = document.getElementById('titulo').value;
+         let description = document.getElementById('descripcion').value;
+        let myTitle= document.createElement('h1');
+        myTitle.classList.add("hola");
+        myTitle.innerText=titulo;
+        let myDescription= document.createElement('p');
+        myDescription.innerText=description;
+        myDescription.classList.add("hola");
+        let listaTareas= document.getElementById('lista-tareas');
+        listaTareas.appendChild(myTitle);
+        listaTareas.appendChild(myDescription);
+
+    }
+
+    let mucho_texto= function(){
+        const element = document.getElementById("hola");
+        element.remove;
+    }
+
+    </script>
+</head>
+
+<body>
+    <div id="lista-tareas">
+    
+    </div>
+
+    
+  
+    <form>
+        
+            <div class="dato">
+                <label for="titulo-tarea">Título</label>
+                <input id="titulo" name="titulo-tarea" type="text" />
+            </div>
+            <div class="dato dato-fallo">
+                <label for="descripcion-tarea">Descripción de tarea</label>
+                <input id="descripcion" name="descripcion-tarea" type="text" />
+            </div>
+            <div id="mensaje" class="mensaje hide">Faltan datos por rellenar.</div>
+       
+        <div class="botonera">
+            <div onclick="borarDatos()" id="reset" class="boton-reset">
+                RESET
+            </div>
+            <div onclick="mostrarDatos()"  class="boton-crear" >
+                CREAR
+            </div>
+            <input type="button" class="Mucho_texto" onclick="mucho_texto()" value="Si">
+    
+        </div>
+    </form>
+</body>
+
+</html>
