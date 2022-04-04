@@ -1,23 +1,33 @@
 package ejercicio1;
 import java.util.*;
-public class Pila {
-private int [] pila=new int[1000];
+public class Pila extends PilaEnteros{
+/**
+ * Creamos un vector para el almacenamiento de los numeros
+ */
+private int [] pila=new int[MAXSIZE];
+/**
+ * Creamos un int para almacenar 
+ * la posicion del ultimo numero del vector(cantidad de elementos en la pila)
+ */
 private int indice=0;
 
-public int[] getPila() {
-	return pila; 
-}
 public int getIndice() {
 	return indice; 
 }
 
 public void push( int num ) {
-	pila[indice]=num;
-	indice++;
+	if(indice<MAXSIZE) {
+		pila[indice]=num;
+		indice++;	
+	}else {
+		throw new IndexOutOfBoundsException("La pila esta llena");
+	}
 }
-public void pop() {
-	pila[indice]=0;
-	indice--;
+public int pop() {
+	if(indice>0) {
+		return pila[--indice];
+	}
+	throw new IndexOutOfBoundsException("La pila esta vacia");
 }
 public int size() {	
 	return indice;
