@@ -17,21 +17,27 @@ public class Votacion {
 	Partido [] l= new Partido[MAXSIZE];
 	Partido [] e = null;
 	//cantidad de partidos en la lista
-	int partidos=0;
+	int partidos=0, conDiputados=0;
 	int diputados;
 	Votacion(int diputados){
 		this.diputados=diputados;
 	}
-	public void insertarVotos(String partido, int votos) {
-		e=null;
-		for(int i=0;i<partidos;i++) {
+	
+	private int insertarVotos(Partido[] l,String partido, int votos, int limite) {
+		for(int i=0;i<limite ;i++) {
 			if(l[i].getNombre().equals(partido)) {
-			l[i].addVotos(votos);
-			return;
+				l[i].addVotos(votos);
+				return limite;
 			}
 		}
-			l[partidos++]=new Partido(partido,votos);
-			
+			l[limite]=new Partido(partido,votos);
+			return ++limite;
+		
+	}
+	
+	public void insertarVotos(String partido, int votos) {
+		e=null;
+		partidos =insertarVotos(l,partido,votos,partidos);
 		}
 	
 	/**
@@ -60,9 +66,10 @@ public class Votacion {
 									aux[auxPartido].getVotos()/divisor); 
 		}
 		Arrays.sort(aux);
-		e=new Partido[diputados];
+		e=new Partido[MAXSIZE];
+		conDiputados=0;
 		for( int i =0; i<diputados; i++) {
-			e[i]= aux[i];
+			conDiputados = insertarVotos(e, aux[i].getNombre(), 1 ,conDiputados);
 		}
 			
 	}
@@ -74,7 +81,7 @@ public class Votacion {
 	}
 	
 	String salida="Partido/Votos";
-		for (int i=0;i<diputados;i++) {
+		for (int i=0;i<conDiputados;i++) {
 			salida+= "\n"+ e[i].getNombre()+"\t"+e[i].getVotos();
 		}
 		return salida;
