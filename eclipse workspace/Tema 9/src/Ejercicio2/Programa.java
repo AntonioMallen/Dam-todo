@@ -8,13 +8,11 @@ public class Programa {
 		int ELECTORES =23563600;
 		final int MAXVOTOS = 500;
 		final int Partidos =20;
-		final int ESCAÑOS =3000;
+		final int ESCAÑOS =27;
 		
 		Random r = new Random();
 		int numVotos;
 		int electores=ELECTORES;
-		
-		int [] votos= {10000,25000,30000,12000};
 		String []p= new String [Partidos];
 		
 		for(int i = 1; i <= Partidos; i++) {
