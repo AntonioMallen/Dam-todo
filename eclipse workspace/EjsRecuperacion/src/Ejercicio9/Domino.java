@@ -12,6 +12,10 @@ public class Domino {
 				}
 			}
 	}
+	/**
+	 * Se crea un metodo el cual tiene como parametro una ficha para almacenarla dentro del vector
+	 * @param ficha
+	 */
 	public void insertarFicha(FichaDomino ficha) {
 		domino[indice]=ficha;
 		indice++;
