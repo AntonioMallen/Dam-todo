@@ -1,8 +1,9 @@
 package Ejercicio9;
 
 /**
- * Esta clase representa una ficha de domino la cual tiene dos numeros comprendidos entre el 1 y 6
- * o tambien puede estar en blanco.
+ * Esta clase representa una ficha de domino la cual tiene dos numeros
+ * (1 numero en cada lado de la ficha) comprendidos entre el 1 y 6 o 
+ * tambien puede estar en blanco.
  * @author alu
  *
  */
@@ -11,7 +12,7 @@ public class FichaDomino {
 	/**
 	 * Este vector tiene dos parametros, uno por cada numero que posee una ficha de domino
 	 */
-	private int[] ficha = new int[2];
+	protected int[] ficha = new int[2];
 	
 	/**
 	 * Este constructor, tomara los numeros del 1 al 6 como los numeros de una ficha de domino 
@@ -41,7 +42,8 @@ public class FichaDomino {
 		if ( ficha[1]==0 ) {
 			return "["+ficha[0]+"| ]";		
 		}
-		return "["+ficha[0]+"|"+ficha[1]+"]";
-		
+		return "["+ficha[0]+"|"+ficha[1]+"]";	
 	}
+	
+	
 }
