@@ -9,34 +9,31 @@
     <link rel="stylesheet" href="./css/styles.css">
     <script>
 
-    let borrarDatos =function(){
-            let titulo = document.getElementById('titulo').value;
-            let description = document.getElementById('descripcion').value;
-            titulo.value="";
-            description="";
+    function borrarDatos (){
+        document.getElementById("titulo").value=''
+        document.getElementById('descripcion').value = '';
         }
 
-    let mostrarDatos =function(){
-
-        
+    function mostrarDatos (){
         let titulo = document.getElementById('titulo').value;
-         let description = document.getElementById('descripcion').value;
+        let description = document.getElementById('descripcion').value;
         let myTitle= document.createElement('h1');
-        myTitle.classList.add("hola");
+        myTitle.setAttribute("id","hola");
         myTitle.innerText=titulo;
         let myDescription= document.createElement('p');
         myDescription.innerText=description;
-        myDescription.classList.add("hola");
+        myDescription.setAttribute("id","hola");
         let listaTareas= document.getElementById('lista-tareas');
         listaTareas.appendChild(myTitle);
         listaTareas.appendChild(myDescription);
 
     }
 
-    let mucho_texto= function(){
+    function mucho_texto(){
         const element = document.getElementById("hola");
-        element.remove;
+        element.remove();
     }
+    
 
     </script>
 </head>
@@ -61,7 +58,7 @@
             <div id="mensaje" class="mensaje hide">Faltan datos por rellenar.</div>
        
         <div class="botonera">
-            <div onclick="borarDatos()" id="reset" class="boton-reset">
+            <div onclick="borrarDatos()" id="reset" class="boton-reset" >
                 RESET
             </div>
             <div onclick="mostrarDatos()"  class="boton-crear" >
