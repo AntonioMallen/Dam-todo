@@ -7,6 +7,9 @@ import java.util.Scanner;
 
 public class Validar {
 	String fichero;
+	String nombre;
+	String passwd;
+	
 	Scanner s=null;
 	
 Validar(String archivo){
@@ -22,16 +25,36 @@ Validar(String archivo){
 		add = false;
 	}
 }
-public boolean validacion(String nombre, String passwd) {}
+public boolean validacion(String nombre, String passwd) {
+	comprobarUsuario(nombre);
+	if(nombre.equals(this.nombre)) {
+		if(this.passwd.equals(passwd)) {
+			System.out.println("Accediendo a la cuenta");
+			return true;
+		}else {
+			System.out.println("La contraseña no es correcta");
+		}
+	}else {
+		System.out.println("El nombre no esta registrado");
+	}
+	
+	return false;
+}
 	
 
-public boolean comprobarUsuario(String nombre) {
+public void comprobarUsuario(String nombre) {
+	boolean existe = false;
 	while(s.hasNext()) {
-		if(s.next().equals(nombre))
-			return true;
+		String n= s.next();
+		if(nombre.equals(n)) {
+			this.nombre=n;
+			existe = true;
+		}
+		if (existe == true) {
+			this.passwd=s.next();
+
+		}
 		s.nextLine();
 	}
-	return false;
-	
 }
 }

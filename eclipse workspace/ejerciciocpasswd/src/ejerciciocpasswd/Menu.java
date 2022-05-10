@@ -3,6 +3,7 @@ package ejerciciocpasswd;
 
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
@@ -13,7 +14,7 @@ public class Menu {
 	// Entrada de datos
 	Scanner in = new Scanner(System.in);
 	
-	public Menu ( String archivo ) {
+	public Menu ( String archivo ) throws IOException {
 		fichero = archivo;
 		boolean fin;
 		do {
@@ -30,7 +31,7 @@ public class Menu {
 		System.out.println("5.- Terminar");
 		
 	}
-	private boolean trabajo ( ) {
+	private boolean trabajo ( ) throws IOException {
 		int opcion;
 		do {
 			imprimir();
@@ -49,13 +50,13 @@ public class Menu {
 			insertar();
 			break;
 		case 2:
-			System.out.println("Borrar");
+			borrar();
 			break;
 		case 3:
 			System.out.println("Modificar");
 			break;
 		case 4:
-			System.out.println("Validar");
+			validar();
 			break;
 		}
 		return false;
@@ -93,6 +94,26 @@ public class Menu {
 			}
 		}
 	}
+	public void validar() {
+		Validar v = new Validar(fichero);
+		String u;
+		String c;
+		System.out.println("Dime el nombre de usuario");
+		u=in.nextLine();
+		System.out.println("Dime la contraseña del Usuario");
+		c=in.nextLine();
+		v.validacion(u, c);
+	
+	}
+	public void borrar() throws IOException {
+		Borrar b = new Borrar(fichero);
+		String u ;
+		System.out.println("Dime el nombre del usuario que deseas borrar");
+		u=in.next();
+		
+		b.comprobarUsuario(u);
+	}
+	
 }
 
 
