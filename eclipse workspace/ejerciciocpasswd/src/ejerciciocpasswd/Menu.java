@@ -99,6 +99,7 @@ public class Menu {
 		String u;
 		String c;
 		System.out.println("Dime el nombre de usuario");
+		in.nextLine();
 		u=in.nextLine();
 		System.out.println("Dime la contraseña del Usuario");
 		c=in.nextLine();
@@ -110,6 +111,7 @@ public class Menu {
 		String u ;
 		System.out.println("Dime el nombre del usuario que deseas borrar");
 		u=in.next();
+		b.borrar(u);
 		
 		b.comprobarUsuario(u);
 	}

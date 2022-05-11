@@ -9,7 +9,7 @@ public class Borrar {
 	String passwd;
 	
 	Scanner s=null;
-	FileWriter tmp=null;
+	PrintStream tmp=null;
 	
 Borrar(String archivo) throws IOException{
 	fichero = archivo;
@@ -20,7 +20,7 @@ Borrar(String archivo) throws IOException{
 		s = new Scanner(
 				new BufferedReader(
 						new FileReader(fichero)));
-		tmp = new FileWriter("tmp.txt");
+		tmp = new PrintStream (new FileOutputStream("tmp.txt"));
 	} catch (FileNotFoundException e1) {
 		add = false;
 	}
@@ -43,12 +43,38 @@ public boolean comprobarUsuario ( String nombre ) {
 public void borrar(String nombre) throws IOException {
 	while(s.hasNext()) {
 		String n= s.next();
-		if( nombre.equals(n)) {
+		String passwd= s.next();
+		if( nombre.equals(n)&&s.hasNextLine()) {
 			s.nextLine();
+			n= s.next();
+			passwd= s.next();
 		}
-		tmp.write(n +" ");
-		s.nextLine();
+		else {
+			n="";
+			passwd="";
+		} 
+		
+		tmp.println(n+ " "+ passwd);
+		
+			s.nextLine();
 	}
-}
-
+		Scanner templectura= null;
+		PrintStream tempescritura= null;
+		try {
+			templectura = new Scanner(
+					new BufferedReader(
+							new FileReader("tmp.txt")));
+			tempescritura = new PrintStream (new FileOutputStream(fichero));
+		} catch (FileNotFoundException e1) {
+		
+		}
+		while(templectura.hasNext()) {
+			String ntemp= templectura.next();
+			String passwdtemp= templectura.next();
+			tempescritura.println(ntemp+ " "+ passwdtemp);
+			templectura.nextLine();
+		}
+		templectura.close();
+		tempescritura.close();
+	}
 }
