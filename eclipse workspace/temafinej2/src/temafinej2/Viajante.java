@@ -1,11 +1,18 @@
 package temafinej2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Viajante {
+public class Viajante implements Serializable {
 	String DNI;
 	String nombre;
-	int antigüedad;
+	int anti;
 	int distanciaRrecorrida;
-	ArrayList<Venta> ventasRealizadas;
+	
+	public Viajante() {
+		this.DNI="21321";
+		this.distanciaRrecorrida=1232;
+		this.anti=1;
+		this.nombre="awdewa";
+	}
 }
